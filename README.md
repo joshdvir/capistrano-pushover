@@ -47,7 +47,7 @@ To determine the user that is currently running the deploy, the capistrano tasks
 
 ## Copyright
 
-Copyright (c) 2012 Shuky Dvir.
+Copyright &copy; 2012 Shuky Dvir.
 
 **MIT License.**
 
