@@ -1,4 +1,4 @@
-# Capistrano::Pushover
+# Capistrano::Pushover [![Build Status](https://secure.travis-ci.org/shukydvir/capistrano-pushover.png)](http://travis-ci.org/shukydvir/capistrano-pushover)
 
 This gem adds hooks to capistrano to send push notifications using [Pushover](https://pushover.net/) service.
 

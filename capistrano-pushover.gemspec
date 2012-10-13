@@ -19,5 +19,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec', '~> 2.5'
   gem.add_development_dependency 'capistrano-spec', '~> 0.1.0'
   gem.add_development_dependency 'capistrano', '~> 2.0'
+  gem.add_dependency 'jruby-openssl' if RUBY_ENGINE == 'jruby'
   gem.add_dependency 'rushover', '~> 0.1.1'
 end
