@@ -1,6 +1,6 @@
+require 'capistrano'
 require 'capistrano-pushover/version'
 require 'rushover'
-require 'capistrano'
 
 module Capistrano
   module Pushover
@@ -13,7 +13,7 @@ module Capistrano
 
           task :set_user do
             set :pushover_client, Rushover::Client.new(pushover_app_token)
-            set :pushover_user, Rushover::User.new(pusehover_user_key, pushover_client)
+            set :pushover_user, Rushover::User.new(pushover_user_key, pushover_client)
           end
 
           task :configure_for_migrations do
@@ -22,18 +22,22 @@ module Capistrano
 
           task :notify_deploy_started do
             on_rollback do
-              pushover_user.notify("#{human} cancelled deployment of #{deployment_name} to #{env}.", :title => "#{application} cancelled deployment", :priority => 1)
+              notify("#{human} cancelled deployment of #{deployment_name} to #{env}.", :title => "#{application} cancelled deployment", :priority => 1)
             end
 
             message = "#{human} is deploying #{deployment_name} to #{env}"
             message << " (with migrations)" if pushover_with_migrations
             message << "."
 
-            pushover_user.notify(message, :title => "#{application} started deploying", :priority => priority)          
+            notify(message, :title => "#{application} started deploying", :priority => priority)          
           end
 
           task :notify_deploy_finished do
-            pushover_user.notify("#{human} finished deploying #{deployment_name} to #{env}.", :title => "#{application} finished deploying", :priority => priority)
+            notify("#{human} finished deploying #{deployment_name} to #{env}.", :title => "#{application} finished deploying", :priority => priority)
+          end
+
+          def notify(message, options = {})
+            pushover_user.notify message, options
           end
 
           def priority

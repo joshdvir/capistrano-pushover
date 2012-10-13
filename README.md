@@ -23,7 +23,7 @@ Add to deploy.rb:
 	require 'hipchat/capistrano'
 	
 	set :pushover_app_token, 'Your Pushover Application Token'
-	set :pusehover_user_key, 'Your Pushover User Token'
+	set :pushover_user_key, 'Your Pushover User Token'
 	
 Now you are ready to recieve notificaion about deploys.
 
