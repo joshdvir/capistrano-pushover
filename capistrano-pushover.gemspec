@@ -16,8 +16,8 @@ Gem::Specification.new do |gem|
   gem.version       = Capistrano::Pushover::VERSION
 
   gem.add_development_dependency 'rake'
-  gem.add_development_dependency 'rspec'
-  gem.add_development_dependency 'capistrano-spec'
-  gem.add_development_dependency 'capistrano'
-  gem.add_dependency 'rushover'
+  gem.add_development_dependency 'rspec', '~> 2.5'
+  gem.add_development_dependency 'capistrano-spec', '~> 0.1.0'
+  gem.add_development_dependency 'capistrano', '~> 2.0'
+  gem.add_dependency 'rushover', '~> 0.1.1'
 end
