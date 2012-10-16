@@ -20,7 +20,7 @@ Or install it yourself as:
 
 Add to deploy.rb:
 
-	require 'hipchat/capistrano'
+	require 'capistrano-pushover'
 	
 	set :pushover_app_token, 'Your Pushover Application Token'
 	set :pushover_user_key, 'Your Pushover User Token'
